@@ -17,7 +17,7 @@ Installation:
     floating.tableofcontent()
     floating.codehider()
 
-![toc_codehider.png][examples/toc_codehider.png]
+![toc_codehider.png](examples/toc_codehider.png)
 
 ### Numbered objects (Figures, ...)
 
@@ -25,4 +25,4 @@ Installation:
     numbered.Figure()
     numbered.object("Figure")
 
-![numbered.png][examples/numbered.png]
+![numbered.png](examples/numbered.png)
