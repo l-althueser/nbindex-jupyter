@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='nbindex-jupyter',
-    version='0.1.2',
+    version='0.1.3',
     packages=['nbindex'],
     url='https://github.com/l-althueser/nbindex-jupyter',
     license='BSD 3-Clause License',
