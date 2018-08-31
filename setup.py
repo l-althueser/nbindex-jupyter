@@ -1,10 +1,10 @@
-from distutils.core import setup
+# encoding: utf-8
+from setuptools import setup
 
 setup(
     name='nbindex-jupyter',
-    version='0.1.0',
+    version='0.1.1',
     packages=['nbindex'],
-    python_requires='>=3.5',
     url='https://github.com/l-althueser/nbindex-jupyter',
     license='BSD 3-Clause License',
     author='Lutz Althüser',
