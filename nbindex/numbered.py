@@ -1,10 +1,10 @@
 from IPython.display import display, HTML
 
-def object(keyword):
+def object(keyword, description=""):
     """
     Adds numbered named object HTML anchors. Link to them in MarkDown using: [to keyword 1](#keyword-1)
     """
-    return display(HTML('''<div id="%s"></div>
+    return display(HTML('''<div id="%s"></div> %s
     <script>
     var fignb = 1;
     var key = "%s"
@@ -16,22 +16,22 @@ def object(keyword):
         }
     });
     </script>
-    ''' % (keyword,keyword)))
+    ''' % (keyword,description,keyword)))
 
-def Figure():
+def Figure(description=""):
     """
     Adds numbered Figure HTML anchors. Link to them in MarkDown using: [to Figure 1](#Figure-1)
     """
-    return object("Figure")
+    return object("Figure", description)
 
-def Table():
+def Table(description=""):
     """
     Adds numbered Table HTML anchors. Link to them in MarkDown using: [to Table 1](#Table-1)
     """
-    return object("Table")
+    return object("Table", description)
 
-def Image():
+def Image(description=""):
     """
     Adds numbered Image HTML anchors. Link to them in MarkDown using: [to Image 1](#Image-1)
     """
-    return object("Image")
+    return object("Image", description)

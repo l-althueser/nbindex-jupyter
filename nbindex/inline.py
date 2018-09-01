@@ -1,16 +1,11 @@
 from IPython.display import display, HTML
 
-def attribution(html_string):
-    return display(HTML('''
-        <script>
-        $('<div id="attribution_footer" style="float:right; color:#999; background:#fff;"> </div>').css({position: 'fixed', bottom: '0px', right: 20}).appendTo(document.body);
-        $('#attribution_footer').html('%s');
-        </script>
-        '''))
+def list_numbered(keyword):
+    pass
 
-def codehider(position={'top': '110px', 'right': '20px'}):
+def codehider():
     """
-    Adds a floating code hider button to the top right of the notebook.
+    Adds a code hider button to the current cell output.
     """
     return display(HTML('''
         <script>
@@ -30,19 +25,13 @@ def codehider(position={'top': '110px', 'right': '20px'}):
         }
 
         $( document ).ready(function(){ $('div.input').hide() });
-
-        if (!($('#CodeButton').length)) {
-            $('<form action="javascript:code_toggle()" id="CodeButtonForm"><input type="submit" id="CodeButton_floating" value="Show code cells"></form>').css({position: 'fixed', top: "%(top)s", right: "%(right)s", background: "rgba(255, 255, 255, 0.6)"}).appendTo(document.body);
-        } else {
-            document.getElementById('CodeButtonForm').style.top = "%(top)s";
-            document.getElementById('CodeButtonForm').style.right = "%(right)s";
-            $('#CodeButton_floating').val('Show code cells');
-        }
-
         </script>
-        ''' % position))
 
-def tableofcontent(maxlevel=3, updatefrequency=300000, exclude_ids=[], position={'top': '135px', 'right': '20px'}):
+        <form action="javascript:code_toggle()"><input type="submit" id="CodeButton_inline" value="Show code cells"></form>
+        '''))
+
+# einmalig parallel zu dem anderen ToC managen -> zwei unabhängige ToC
+def tableofcontent(maxlevel=3, updatefrequency=300000, exclude_ids=[]):
     """
     Adds a floating code hider button and table of content to the top right of
     the notebook. Only the first apperance of equal headlines is linked. This
@@ -54,9 +43,9 @@ def tableofcontent(maxlevel=3, updatefrequency=300000, exclude_ids=[], position=
 
     maxlevel: Set the max level to which headlines are added.
     """
-    position.update({'maxlevel': maxlevel})
-    position.update({'updatefrequency': updatefrequency})
-    position.update({'exclude': '['+','.join(['"'+e+'"' for e in exclude_ids])+']'})
+    options = {'maxlevel': maxlevel,
+               'updatefrequency': updatefrequency,
+               'exclude': '['+','.join(['"'+e+'"' for e in exclude_ids])+']'}
     return display(HTML('''<script>
 // Converts integer to roman numeral
 function romanize(num) {
@@ -122,34 +111,17 @@ function createTOC(toc_tag, maxlevel){
     $('#'+toc_tag).append(toc);
 };
 
-$('<div id="toc"></div>').css({position: 'fixed', top: '160px', right: 20, background: "rgba(255, 255, 255, 0.6)"}).appendTo(document.body);
-$("#toc").css("z-index", "2000");
+// Executes the createTOC_inline function
+setTimeout(function(){createTOC('tocinline', 1 + %(maxlevel)s);},1000);
+setTimeout(function(){createTOC('tocinline', 1 + %(maxlevel)s);},5000);
+setTimeout(function(){createTOC('tocinline', 1 + %(maxlevel)s);},15000);
 
-// Executes the createToc function
-setTimeout(function(){createTOC('toc', 1 + %(maxlevel)s);},100);
-setTimeout(function(){createTOC('toc', 1 + %(maxlevel)s);},5000);
-setTimeout(function(){createTOC('toc', 1 + %(maxlevel)s);},15000);
-
-// Rebuild TOC every 5 minutes
-setInterval(function(){createTOC('toc', 1 + %(maxlevel)s);}, %(updatefrequency)s);
-
-function toc_toggle() {
- if ($('#toc').is(':visible')){
-     $('#toc').hide('500');
-     $('#tocButton').val('Show table of content')
- } else {
-     $('#toc').show('500');
-     $('#tocButton').val('Hide table of content')
- }
-}
-
-if (!($('#tocButton').length)) {
-    $('<form action="javascript:toc_toggle()" id="tocButtonForm"><input type="submit" id="tocButton" value="Hide table of content"></form>').css({position: 'fixed', top: "%(top)s", right: "%(right)s", background: "rgba(255, 255, 255, 0.6)"}).appendTo(document.body);
-} else {
-    document.getElementById('tocButtonForm').style.top = "%(top)s";
-    document.getElementById('tocButtonForm').style.right = "%(right)s";
-    $('#tocButton').val('Hide table of content')
-}
+// Rebuild TOC_inline every 5 minutes
+setInterval(function(){createTOC('tocinline', 1 + %(maxlevel)s);}, %(updatefrequency)s);
 
 </script>
-''' % position))
+
+<h2 id="tocheading">Table of Content</h2>
+<div id="tocinline"></div>
+
+''' % options))
