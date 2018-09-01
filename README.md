@@ -5,24 +5,31 @@ to be executed in a notebook cell so that the added HTML and Javascript function
 will remain hidden in the cell output and can be exported by the regular HTML
 export of Jupyter.
 
-Installation:
+## Installation
 
     pip install nbindex-jupyter
 
 ## Usage
 
-### ToC and CodeHider
+### Table of Content and Code Hider
 
-    from nbindex import utils, floating
+    from nbindex import inline
+    inline.tableofcontent()
+    inline.codehider()
+
+![inline.png](examples/inline.png)
+
+    from nbindex import floating
     floating.tableofcontent()
     floating.codehider()
 
-![toc_codehider.png](examples/toc_codehider.png)
+![floating.png](examples/floating.png)
 
 ### Numbered objects (Figures, ...)
 
     from nbindex import numbered
     numbered.Figure()
+    numbered.Figure("This is a nice Figure.")
     numbered.object("Figure")
 
 ![numbered.png](examples/numbered.png)
