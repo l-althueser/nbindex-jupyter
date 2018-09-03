@@ -1,10 +1,15 @@
-dist: trusty
-language: python
 sudo: false
+language: python
+python:
+- '3.4'
+- '3.5'
+- '3.6'
 deploy:
   provider: pypi
   user: l-althueser
   password:
-    secure: iTqRr+byZtY9OsPli5ta+e86Me98EsviUjwPz9dTVQyp6EyysCQ0Atoo3Mt/1peenJoMMoJJkbmC1Ml+RHzHq6ilstVzAYVQnFikQW5jYJ52OdUXRk1NNnGevTXE+9yUkh+C013u7xtZQCAwrpzwIrrTjHy4OUxUUtHwOMkzCTxGS2/Uyw0qpt1QyF9+yc3kuk5e394qGDoCn9PIhffnOh7DVIzQOyShvpXNSxcIECGJLSn7FA80w5Ox4FbAgAPas8NSIFvaKPUVvXj24FObypjLxVpevv4ntLQVTsHMam846lTbFTpXaavT8Fh/5/MpAhdbM/mxh7Qov3ofc6+c3TjP0bRcA3KxVmpqgLHM/n28PwSGtGZcCNh20wpPoRbgdrFyfSMbkui5qzI2TdWIJlFo6gTadxPp4bct226BrYJxNDmBhL7cl6/m+mgd1muuQ0tezCawVepRLlZaoQL/AhBlNkKLjleU+JrzGkQowWpo7ySJVHPBmVV0thtWphDDYCjGNWa3/Bx9IUBy1tf/RF+WBMYcVFF41WiKAD+ypFXaiXHFFvEg1i6mwkab60Ltrrh9Rav+JOej3VHy1c9U/UHN+KgH9VrXL/x9yhTr99IK8C/A297avYtsulazv0zLEU251y4M8uwwXa5jJoKVLj9JF1KKiu1DqbQCIuh+FY0=
+    secure: vNFaDlWyHD9QjL+Gj2sO8PGE7Y/8vsZ6IPlfZdxBLyrNxS0hhBDR0YIQREsiyEkba5YPDi1GKBuNE8EDwc0gD6X8xbgh/cnX8jNyOdEHJvSvO+1XMXqz1hW9fD5NPDqlLN6ginLw78DXi27w/h9pOB/4/lBg+AwSHDCXpdzyDUF2k3ubj43IhMxwvvpmRZB7Ezp5wFRD3zRu6BLrV98wgu9PYT1cxyB5o3asP0++vOL4A63IV6jvhqMBwpEbXiY2ZchaYq/0jXRF7hC6sRsrx1jnV1Y29v4y38tMdExiQSqt5aCT6ljtftuSt63B4XnCke5/zcQmMIv8gpWUJH5kCAp/pF/M0wbVGKOY4rqYMs7P21UXfKN+3Rj1Eb3Pwi++2Sjfem6IQSGxJyNmVBNeZFAVWDLMBApHfwccOonuB4/N7cOTL5bq72ynZrTBVlP6XL38eYJ0d6NR9Trt7FcLVWWTZm+7jBmuT8uu3QxMlq/Ml7cNWcioFXwQh1EJkq8nbUqXbFIrf+FU9Z9j8QKbtCj20bPwSOh+5gyGm7CFRScgBU4c3Y2/WMrGCcY/q8oUmL1qChcd0yryL08K3Rfz8/tktXrTyb8TdlcIuhbHH+t7Sn86QnwrcIugjnqLreGiq1okIY1PdNM2oszjwWfo9W1pnCwjWOFB1lrKeHG15Wk=
   on:
     tags: true
+    repo: l-althueser/nbindex-jupyter
+
