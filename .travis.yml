@@ -10,7 +10,7 @@ deploy:
   provider: pypi
   user: l-althueser
   password:
-    secure: UI93CN9+1XK5MBIHcos+gcjC3Ee/0CWFnUcxYJ9+LPT4yuGLzliU92GAOQirpWkSEBggFTnkR9mxJVX8t7xk64x83JBKBLJXWuyTsYSGecx++stnwgnWfqTd5MgJVnqKu6nGYYIA0vEthtGpAzc+/IOA7QlUFaWbOFC8MBMwSPs9HJc1ObyJuXeS639kzzNOwojNeX/dG0VU70a9GE5Me4Tfrrzlx/GKeML3WFBLgn/HjJ4/MNG9P8w14ERxI9O7IEIc2H7AL+4jzcLbRC5yIDxd05YrcyNv5Jd0frUZ8FW7DW4Ovc3GbaBpPIQNx2vnQQXgCIq08D0tDCuhTHxt89tcLa4fueuqQwZTPFNZi8oaLn0l3w/2O9OOp5SRofq2oKL/7qoUJ51Ur/eGXuwZkoQ3WC3HLF1ofcM/ofg7TgHF1QWrJseKpRgRPe1YD7nudL/JR7RBytT9wuisyWTyHIdWFvqCHyuTn08ULVZJmUhVBHj/n1cwEA75ImM5Ih1J/tLpgyyJDpvEI3TC0x+jvX0JoDuEOFBTVXALVPSKaq+K3V+04Uj7tLbktC9UG78fEbgecbLVzeX1WiXWhSaaukhOX3yGYJyWOgJhnJnQ4YSjgwiiCMJ9wiTB3RSamQFNeivEQiyiB5g7thdzW+ZScm274bj1GbOr82yAIxFEHw8=
+    secure: pizzakarton123
   on:
     tags: true
     repo: l-althueser/nbindex-jupyter
