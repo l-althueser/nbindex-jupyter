@@ -1,4 +1,8 @@
 # Index for Jupyter notebooks
+[![Build Status](https://travis-ci.com/l-althueser/nbindex-jupyter.svg?branch=master)](https://travis-ci.com/l-althueser/nbindex-jupyter)
+[![PyPI version shields.io](https://img.shields.io/pypi/v/nbindex-jupyter.svg)](https://pypi.python.org/pypi/nbindex-jupyter/)
+[![GitHub license](https://img.shields.io/github/license/l-althueser/nbindex-jupyter.svg)](https://github.com/l-althueser/nbindex-jupyter)
+
 `nbindex` is a small package containing several Javascript additions for Jupyter
 notebooks like a Table of Content or a Code Hider. These additions are designed
 to be executed in a notebook cell so that the added HTML and Javascript functions
