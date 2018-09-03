@@ -1,18 +1,10 @@
-# This file contains all of the settings for TravisCI
-# see: https://travis-ci.org
-
-dist: trusty # Ubuntu distribution
+dist: trusty
 language: python
-
-# Everything should work in userspace
 sudo: false
-
-# Deploy releases to PyPI for pip installs
-# See https://docs.travis-ci.com/user/encryption-keys/
 deploy:
   provider: pypi
-  user: "l-althueser"
+  user: l-althueser
   password:
-    secure: "GvKGP2A5QfYMOWfnE4s6bbjGoLT2bDteJYuONVEpTv/x/juoBdFb8iXPCoQ1JAiUkuQ9M28r28pMX6ikTFys0N9JZY+jeZ0r/9qF31zPZqWqI12i+EhiPd0qZ3WG15HLF11hz7LtimSgT0isDdPm5HwtaB4qS4ycmvOYgyxOapfpCZz1ophrODB91eq1xOMny/qMI8UVTJXTpkBYa4adX5OdmqiO7ShfBcDDvUuyPEOhJ/YklpavEsLnbQhtVL43MRH+LiAs+f+Sh1z583eITLM2+n8LwGvU8WSX+TKoi0p3AZx8SxO5SzFXVAM1rN+bCeQEMdyRoHqmQ1AJGAMoIpjotJCGbIDajNL5z7dYBtLvfSMXFu0Au3D4Yw0wc2sam5GqnsAuBjSACOyz2s2PHRi2tldkbuLEwlQpudFzv/JSnSQZKTRhAHsOQDA7gNdaOjKtpziUAkhvlBbDCZW82QpQcGXFP0Xbu1iThu+jlCufEFeG9QG3PNFt9CDO9TMniGfKfw4AibbWjnWsNYUw3FRbjIuddOs9UqVqp2Uf7rnwo2cUQpz3Jd+dQ85SDmOaeID8STh3bfB5gV3FOvuXAHNlQL+YipzNJqNxMRdqe8Ml+A+rNPVEgytW8c21KqtKOHXUaiTLrZZy5w5AYAPm//K/NKM8l+YKdE55U8bjbsc="
+    secure: iTqRr+byZtY9OsPli5ta+e86Me98EsviUjwPz9dTVQyp6EyysCQ0Atoo3Mt/1peenJoMMoJJkbmC1Ml+RHzHq6ilstVzAYVQnFikQW5jYJ52OdUXRk1NNnGevTXE+9yUkh+C013u7xtZQCAwrpzwIrrTjHy4OUxUUtHwOMkzCTxGS2/Uyw0qpt1QyF9+yc3kuk5e394qGDoCn9PIhffnOh7DVIzQOyShvpXNSxcIECGJLSn7FA80w5Ox4FbAgAPas8NSIFvaKPUVvXj24FObypjLxVpevv4ntLQVTsHMam846lTbFTpXaavT8Fh/5/MpAhdbM/mxh7Qov3ofc6+c3TjP0bRcA3KxVmpqgLHM/n28PwSGtGZcCNh20wpPoRbgdrFyfSMbkui5qzI2TdWIJlFo6gTadxPp4bct226BrYJxNDmBhL7cl6/m+mgd1muuQ0tezCawVepRLlZaoQL/AhBlNkKLjleU+JrzGkQowWpo7ySJVHPBmVV0thtWphDDYCjGNWa3/Bx9IUBy1tf/RF+WBMYcVFF41WiKAD+ypFXaiXHFFvEg1i6mwkab60Ltrrh9Rav+JOej3VHy1c9U/UHN+KgH9VrXL/x9yhTr99IK8C/A297avYtsulazv0zLEU251y4M8uwwXa5jJoKVLj9JF1KKiu1DqbQCIuh+FY0=
   on:
     tags: true
