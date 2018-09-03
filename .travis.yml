@@ -2,15 +2,13 @@ sudo: false
 language: python
 python:
 - '3.6'
-
 script:
 - echo "skipping tests for now .."
-
 deploy:
   provider: pypi
   user: l-althueser
   password:
-    secure: pizzakarton123
+    secure: E9wF7V9aLuo6QKXK92Tde8GI7yT9wH+nUnjt1JgESN+Bkegp2n/GfNtWtU22yhNKZlbW4RNtCq2RaB+zl1q/wNqBJNuvnLIa/W12QpQ0N000i661KxVPeZ9EWJu6IpD5FupgMiWUoVRo3NvOsoEk/sNC5H0EywCjdBR1i6uLyYtJtTkhARBhee2FtFer3xEv6TYb07Qpl0AVxOEJRR1vPzNOY/nZpgvKFreYzXwjl7U3Qe0wLWdoDzGCATJsl6RBY/hPzXevRUyYcKP3SgmFcI5qd7u3v7JUA2EbzO1QBHMK6plhEoVXGZBbb45TTmEan4TORu+id7PIfBO6BVM4rpqQO29k3flshaKJ9GWgcKArdYt1Mc6qFxwPPbseXGXjtLl4j/iolqcyn5D+r5SXh+cBdivQ2Qefk6yzLEwIpy/qdo7szC3AVJdHpZ01vbH0jrCenGdvmfxItFa7b5a73FKsJYtKrpbkYSKgBU6Z2BWoq/2bxq+EqlFyGqAPpxeXjHv5CQBB2/5m0XUb5ja6zJ1/3xDu7fQwO+GRHrPdie64NCS9jo0PTXUiB0zUxc5eouevIDOtbqVNzq7d9Mxgejw6lDDYiUKouXcLaAzN62Mf1dznZBY70bXSLWLKxEu8ZH6brAfWxqBIQU5LV9iIMj1K8KpvIqaGvEVO6qyrjMA=
   on:
     tags: true
     repo: l-althueser/nbindex-jupyter
