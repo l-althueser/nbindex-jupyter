@@ -1,0 +1,22 @@
+# This file contains all of the settings for TravisCI
+# see: https://travis-ci.org
+
+dist: trusty # Ubuntu distribution
+language: python
+
+# Caching the Python dependencies speeds up builds and lightens
+# the load on TravisCI
+cache: pip  
+
+# Everything should work in userspace
+sudo: false
+
+# Deploy releases to PyPI for pip installs
+# See https://docs.travis-ci.com/user/encryption-keys/
+deploy:
+  provider: pypi
+  user: "l-althueser"
+  password:
+    secure: "GvKGP2A5QfYMOWfnE4s6bbjGoLT2bDteJYuONVEpTv/x/juoBdFb8iXPCoQ1JAiUkuQ9M28r28pMX6ikTFys0N9JZY+jeZ0r/9qF31zPZqWqI12i+EhiPd0qZ3WG15HLF11hz7LtimSgT0isDdPm5HwtaB4qS4ycmvOYgyxOapfpCZz1ophrODB91eq1xOMny/qMI8UVTJXTpkBYa4adX5OdmqiO7ShfBcDDvUuyPEOhJ/YklpavEsLnbQhtVL43MRH+LiAs+f+Sh1z583eITLM2+n8LwGvU8WSX+TKoi0p3AZx8SxO5SzFXVAM1rN+bCeQEMdyRoHqmQ1AJGAMoIpjotJCGbIDajNL5z7dYBtLvfSMXFu0Au3D4Yw0wc2sam5GqnsAuBjSACOyz2s2PHRi2tldkbuLEwlQpudFzv/JSnSQZKTRhAHsOQDA7gNdaOjKtpziUAkhvlBbDCZW82QpQcGXFP0Xbu1iThu+jlCufEFeG9QG3PNFt9CDO9TMniGfKfw4AibbWjnWsNYUw3FRbjIuddOs9UqVqp2Uf7rnwo2cUQpz3Jd+dQ85SDmOaeID8STh3bfB5gV3FOvuXAHNlQL+YipzNJqNxMRdqe8Ml+A+rNPVEgytW8c21KqtKOHXUaiTLrZZy5w5AYAPm//K/NKM8l+YKdE55U8bjbsc="
+  on:
+    tags: true
